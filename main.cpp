@@ -39,7 +39,7 @@ int main() {
     double BA, kf, p0, mstar, K, J, L, h;
     double params[7];
     // FSU GOLD2
-    /*
+    
     BA = -16.28017866;                                           // Binding energy (MeV)
     kf = 1.306395766;
     p0 = 2.0/(3.0*pow(pi,2.0))*pow(kf,3.0);                      // saturation density (fm-3)                  
@@ -49,9 +49,10 @@ int main() {
     L = 112.8424899;                                             // Derivative of Symmetry Energy at sat (MeV)
     h = 0.004274483658;                                            // Self interaction strength for w meson       
     nuc.get_parameters(BA,p0,J,mstar,K,L,h,params,true,true);              // calculate coupling constants FSU Model         
-    */
+    
     
     // FSU GARNET
+    /*
     params[0] = 110.3492/pow(496.939,2.0);
     params[1] = 187.695/pow(782.5,2.0);
     params[2] = 192.927/pow(763.0,2.0);
@@ -59,7 +60,8 @@ int main() {
     params[4] = -0.003551/6.0;
     params[5] = 0.0235/6.0;
     params[6] = 0.043377*2.0;
-    
+    */
+
     /*
     BA = -16.180293338575;
     kf = 1.3124559217007;
@@ -79,7 +81,6 @@ int main() {
     //nuc.get_PNM_SNM_EOS(params,COREEOS,npoints,true,0.0);      // (nb,en,pr,E/N,mstar)
     dm.cleanup(COREEOS,npoints);        // comment out if getting crust EOS or using COREEOS to get MR or ILQ
     
-    /*
     // Add Crust (Optional)
     double** crust; double** EOS;
     dm.importdata("Initializing_files/CRUSTEOS.txt",crust);
@@ -88,7 +89,7 @@ int main() {
     dm.cleanup(crust,nrows);
     dm.cleanup(COREEOS,npoints);
     dm.cleanup(EOS,n);          // comment out if using the EOS to calc MR
-    */
+    
     
     // --------------- Calculate Bulk Properties 
     //string fileSNM = "FSUEOS_SNM.txt";

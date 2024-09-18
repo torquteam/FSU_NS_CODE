@@ -1,6 +1,7 @@
-CXX = g++
+CXX = g++-10
+CC = gcc-10
 VARNAME = value
-CXXFLAGS = -Wall -g -O2 -fopenmp
+CXXFLAGS = -Wall -g -O2 -fopenmp -std=c++17 -fPIC
 
 main: main.o NumMethods.o quarkEOS.o nucEOS.o Conversions.o MCMC.o
 	$(CXX) $(CXXFLAGS) -o main main.o NumMethods.o quarkEOS.o nucEOS.o Conversions.o MCMC.o
